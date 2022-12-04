@@ -13,10 +13,14 @@ export default function assetsEndpoint(
   if (currentVersion === "0.0.1") {
     res.statusCode = 200;
     res.json({
-      url: "https://github.com/outsung/tauri-update-server/raw/main/updates/tauri/0.0.2/tauri-boilerplate.app.tar.gz",
       version: "0.0.2",
       notes: "v0.0.2 test file",
-      signature: process.env.TAURI_PRIVATE_KEY,
+      platforms: {
+        "darwin-aarch64": {
+          signature: process.env.TAURI_PRIVATE_KEY,
+          url: "https://github.com/outsung/tauri-update-server/raw/main/updates/tauri/0.0.2/tauri-boilerplate.app.tar.gz",
+        },
+      },
     });
   } else {
     res.statusCode = 204;
