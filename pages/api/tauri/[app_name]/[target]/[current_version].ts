@@ -16,6 +16,10 @@ export default function assetsEndpoint(
       version: "0.0.2",
       notes: "v0.0.2 test file",
       platforms: {
+        "darwin-x86_64": {
+          signature: process.env.TAURI_PRIVATE_KEY,
+          url: "https://github.com/outsung/tauri-update-server/raw/main/updates/tauri/0.0.2/tauri-boilerplate.app.tar.gz",
+        },
         "darwin-aarch64": {
           signature: process.env.TAURI_PRIVATE_KEY,
           url: "https://github.com/outsung/tauri-update-server/raw/main/updates/tauri/0.0.2/tauri-boilerplate.app.tar.gz",
